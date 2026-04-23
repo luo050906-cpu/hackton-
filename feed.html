@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/feed.css" />
+    <title>TikTik - Feed</title>
+  </head>
+  <body>
+    <header>
+      <nav id="loading-container" class="container-style">
+        <ul>
+          <li>
+            <a href="index.html">
+              <h1>Escape<span> the </span>Scroll</h1></a
+            >
+          </li>
+          <i class='bx bx-menu' id="menu-icon"></i>
+          <div class="menu-items">
+            <li><a href="feed.html" class="active">TikTik</a></li>
+            <li><a href="focus.html">Focus</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="feed-main">
+      <div class="tiktik-feed" id="feedContainer">
+      </div>
+
+      <!-- trap screen! -->
+      <div class="trap-screen" id="trapScreen">
+        <div class="trap-content">
+          <i class='bx bx-error-circle trap-icon'></i>
+          <h1>YOU ARE TRAPPED!</h1>
+          <p>Mindless scrolling detected. It's time to break the cycle.</p>
+          <a href="focus.html" class="focus-btn">
+            Go to Focus Mode <span id="countdown-text">(10s)</span>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <script src="./js/feed.js"></script>
+  </body>
+</html>

@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lexend:wght@700;800&display=swap');
+
+:root {
+    --bg-color: #05050a;
+    --neon-pink: #e400c9;
+    --neon-blue: #00d4ff;
+    --neon-red: #ff0055;
+    --neon-green: #00ff88;
+    --card-bg: rgba(20, 10, 30, 0.6);
+    --text-main: #ffffff;
+    --text-dim: #a090b0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(228, 0, 201, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 50%);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+/* =======================================
+   1. HOOFD CONTAINER
+   ======================================= */
+#status-pagina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px 20px;
+    position: relative;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================================
+   2. HEADER
+   ======================================= */
+.status-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.terug-link {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    text-decoration: none;
+    color: var(--text-dim);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.terug-link:hover {
+    color: var(--neon-pink);
+    transform: translateX(-3px);
+}
+
+.status-header h2 {
+    font-family: 'Lexend', sans-serif;
+    color: var(--text-main);
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(228, 0, 201, 0.5);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.status-header p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* =======================================
+   3. STATS GRID & CARDS
+   ======================================= */
+.status-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.stat-card p {
+    font-family: 'Lexend', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* Thema voor slechte stats (Gevaar/Rood) */
+.stat-card.gevaar {
+    border-top: 3px solid var(--neon-red);
+}
+
+.stat-card.gevaar:hover {
+    box-shadow: 0 10px 30px rgba(255, 0, 85, 0.15);
+}
+
+.stat-card.gevaar p {
+    color: var(--neon-red);
+    text-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+}
+
+/* Thema voor goede stats (Succes/Groen) */
+.stat-card.goed {
+    border-top: 3px solid var(--neon-green);
+}
+
+.stat-card.goed:hover {
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.15);
+}
+
+.stat-card.goed p {
+    color: var(--neon-green);
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+}
+
+/* =======================================
+   4. CONFRONTATIE SECTIE
+   ======================================= */
+.confrontatie-sectie {
+    width: 100%;
+    background: rgba(10, 5, 20, 0.8);
+    border: 1px solid rgba(228, 0, 201, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+    box-shadow: 0 0 40px rgba(228, 0, 201, 0.1) inset;
+}
+
+#confrontatie-titel {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#confrontatie-tekst {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =======================================
+   5. KNOPPEN
+   ======================================= */
+.status-knoppen {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-status {
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-actie {
+    background: linear-gradient(135deg, var(--neon-pink), #ff007b);
+    color: white;
+    box-shadow: 0 8px 20px rgba(228, 0, 201, 0.4);
+}
+
+.btn-actie:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(228, 0, 201, 0.6);
+}
+
+.btn-reset {
+    background: rgba(255, 0, 85, 0.1);
+    color: var(--neon-red);
+    border: 1px solid rgba(255, 0, 85, 0.3);
+}
+
+.btn-reset:hover {
+    background: rgba(255, 0, 85, 0.2);
+    border-color: rgba(255, 0, 85, 0.5);
+    transform: translateY(-3px);
+}
+
+/* =======================================
+   6. RESPONSIVE DESIGN (MOBIEL)
+   ======================================= */
+@media (max-width: 768px) {
+    .terug-link {
+        position: static;
+        margin-bottom: 15px;
+    }
+
+    .status-header h2 {
+        font-size: 2rem;
+    }
+
+    .confrontatie-sectie {
+        padding: 30px 20px;
+    }
+
+    #confrontatie-titel {
+        font-size: 1.5rem;
+    }
+
+    .status-knoppen {
+        flex-direction: column;
+    }
+
+    .btn-status {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* =======================================
+   7. UTILITIES
+   ======================================= */
+.hidden {
+    display: none !important;
+}

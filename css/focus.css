@@ -1,0 +1,627 @@
+/* Jouw basis setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #05050a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+/* =======================================
+   HIERONDER STAAN DE CLASSES EN IDs DIE JE 
+   ZELF KUNT STYLEN OM HET MOOI TE MAKEN!
+   (Vul zelf de CSS properties in)
+   ======================================= */
+
+/* 1. De hoofd container van de focus pagina */
+#focus-mode {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.focus-header {
+    width: 100%;
+    height: 10vh;
+    background-color: #181818;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 0 10px #92015a, 0 0 20px #92015a;
+    padding: 20px;
+    margin-bottom: 120px;
+
+    animation: slide-down 2s ease-in-out infinite alternate;
+}
+
+@keyframes slide-down {
+    0% {
+        box-shadow: 0 0 5px #e400c967, 0 0 10px #1700e454, 0 0 15px #e400c928;
+    }
+
+    100% {
+        box-shadow: 0 0 10px #0017e492, 0 0 20px #0004e492, 0 0 25px #e400c959;
+    }
+}
+
+.terug-link {
+    text-decoration: none;
+    color: rgb(242, 242, 242);
+    font-size: 20px;
+}
+
+.focus-header h2 {
+    color: #e400c9;
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: 0 0 10px #e400c9;
+    margin-bottom: 40px;
+}
+
+/* 3. De Timer */
+.focus-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    border-radius: 20px;
+    background-color: #52525225;
+    padding: 20px;
+    width: 80%;
+    border: 1px solid #e400c9;
+    box-shadow: 0 0 10px #e400c9;
+    gap: 20px;
+    padding: 40px;
+    animation: rotate 3s ease;
+    animation: rotte 3s ease-in infinite;
+
+}
+
+
+
+.timer-container {
+    justify-content: center;
+    align-items: center;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    padding-left: 140px;
+    padding-right: 140px;
+    gap: 20px;
+    margin-top: 60px;
+    /* background-color: #0a0a3be8; */
+
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    color: white;
+    position: relative;
+    height: 400px;
+    width: 400px;
+    border-radius: 20px;
+}
+
+.tijd-weergave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#timer-display {
+    font-size: 60px;
+    font-weight: 700;
+    color: #fff0f0;
+    text-shadow: 0 0 10px #e400c9;
+}
+
+#timer-status {
+    margin-top: 60px;
+    color: #fff0f0;
+    text-shadow: 0 0 10px #e400c9;
+    font-size: 20px;
+    letter-spacing: 1px;
+    width: max-content;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.knoppen-bediening {
+    margin-top: 30px;
+}
+
+.btn-focus {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.btn-start {
+    background-color: #e400c9;
+    color: white;
+    box-shadow: 0 0 10px #e400c952;
+    text-shadow: 0 0 5px #ffffff;
+
+    &:hover {
+        background-color: #d300bd;
+        box-shadow: 0 0 15px #e400c985;
+    }
+
+    &:active {
+        transform: scale(0.96);
+    }
+
+}
+
+.btn-pauze {
+
+    &:hover {
+        background-color: rgb(156, 26, 26);
+        border-color: rgb(207, 15, 15);
+        box-shadow: 0 0 15px #e400c985;
+        color: #ffffff;
+    }
+
+    &:active {
+        transform: scale(0.96);
+    }
+}
+
+.btn-reset {
+    background-color: #a50404;
+    border: 1px solid #e40000;
+    box-shadow: 0 0 10px #e4000052;
+
+    &:hover {
+        background-color: rgb(156, 26, 26);
+        border-color: rgb(207, 15, 15);
+        box-shadow: 0 0 15px #e400c985;
+        color: #ffffff;
+    }
+
+    &:active {
+        transform: scale(0.96);
+    }
+}
+
+.audio-opties {
+    background-color: #0a0a3b34;
+    border: 1px solid #e400c967;
+    box-shadow: 0 0 10px #e400c954;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#geluid-keuze {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 19px;
+    background: rgb(34, 34, 34);
+    color: #e0e0e0;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(0, 0, 0);
+    }
+
+    &:active {
+        transform: scale(0.96);
+    }
+}
+
+
+.focus-footer {
+
+    background-color: #0a0a3b34;
+    border: 1px solid #e400c967;
+    box-shadow: 0 0 10px #e400c954;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    justify-content: space-between;
+
+    margin-top: 40px;
+    text-align: center;
+}
+
+#streak-teller {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0 0 10px #e400c9;
+    background-color: #0a0a3b34;
+    border: 1px solid #e400c967;
+    box-shadow: 0 0 10px #e400c954;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.stats-link {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0 0 10px #e400c9;
+    background-color: #0a0a3b34;
+    border: 1px solid #e400c967;
+    box-shadow: 0 0 10px #e400c954;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 20%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.voltooid-overlay.hidden {
+    display: none;
+}
+
+.voltooid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.voltooid-card {
+    background-color: #0a0a3b34;
+    border: 1px solid #e400c967;
+    box-shadow: 0 0 10px #e400c954;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    justify-content: center;
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0 0 10px #e400c9;
+}
+
+.voltooid-emoji {
+    font-size: 5em;
+    margin-bottom: 20px;
+}
+
+.voltooid-knoppen {
+    background-color: #0a0a3b34;
+    border: 1px solid #e400c967;
+    box-shadow: 0 0 10px #e400c954;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    justify-content: center;
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0 0 10px #e400c9;
+}
+
+@keyframes rotate {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotte {
+    from {
+        border: 1px solid #e400ff;
+        box-shadow: 0 0 10px #e400ff,
+            0 0 20px #e400ff,
+            0 0 30px #e400ff;
+
+
+    }
+
+    to {
+        border: 1px solid #ff0000;
+        box-shadow: 0 0 10px #e400ff,
+            0 0 20px #e400ff,
+            0 0 30px #e400ff;
+    }
+}
+
+/* =======================================
+   NOTIFICATIE SYSTEEM (SLIDE BANNERS)
+   ======================================= */
+.notificatie-banner.hidden {
+    transform: translateY(-150%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.notificatie-banner {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 340px;
+    background: rgba(30, 20, 40, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 9999;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+}
+
+.notif-icon {
+    font-size: 1.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.notif-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+}
+
+.notif-content strong {
+    color: white;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.notif-content p {
+    color: #a090b0;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.notif-klik-laag {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Rand kleuren per type notificatie */
+#notif-fake-video {
+    border-top: 3px solid #00d4ff;
+}
+
+#notif-versnelling {
+    border-top: 3px solid #ffcc00;
+}
+
+#notif-whatsapp {
+    border-top: 3px solid #25D366;
+}
+
+#notif-snapchat {
+    border-top: 3px solid #FFFC00;
+}
+
+#notif-instagram {
+    border-top: 3px solid #C13584;
+}
+
+/* =======================================
+   FOCUS VERBROKEN (JE BROKT) OVERLAY
+   ======================================= */
+.broken-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.05);
+}
+
+.broken-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    background: rgba(30, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+}
+
+.broken-card {
+    background: rgba(30, 10, 20, 0.8);
+    border: 2px solid #ff3333;
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.4);
+    animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.broken-emoji {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.broken-card h2 {
+    color: #ff3333;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+.broken-card p {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* =======================================
+   RESPONSIVE DESIGN (MOBIEL)
+   ======================================= */
+@media (max-width: 768px) {
+    .focus-header {
+        margin-bottom: 40px;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .focus-header h2 {
+        margin-bottom: 10px;
+    }
+
+    .focus-main {
+        width: 95%;
+        padding: 20px 10px;
+    }
+
+    .timer-container {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        padding: 0;
+    }
+
+    #timer-display {
+        font-size: 50px;
+    }
+
+    #timer-status {
+        margin-top: 30px;
+        font-size: 16px;
+        height: auto;
+    }
+
+    .knoppen-bediening {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .btn-focus {
+        margin: 0;
+        width: 100%;
+    }
+
+    .audio-opties {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding: 15px;
+    }
+
+    #geluid-keuze {
+        width: 100%;
+    }
+
+    .focus-footer {
+        flex-direction: column;
+        width: 95%;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    #streak-teller, .stats-link {
+        width: 100%;
+    }
+
+    .notificatie-banner {
+        width: 90%;
+        left: 5%;
+        transform: none;
+    }
+
+    .broken-card, .voltooid-card {
+        width: 90%;
+        padding: 20px;
+    }
+}

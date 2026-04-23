@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Mode - ScrollLock Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lexend:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/focus.css">
+</head>
+
+<body>
+
+    <section id="focus-mode">
+        <header class="focus-header">
+            <a href="index.html" class="terug-link">← Back</a>
+            <h2>Focus Session</h2>
+        </header>
+
+        <main class="focus-main">
+            <div class="timer-container">
+
+
+                <div class="tijd-weergave">
+                    <h1 id="timer-display">25:00</h1>
+                    <hr>
+                    <p id="timer-status">Ready to focus</p>
+                </div>
+            </div>
+
+            <div class="knoppen-bediening">
+                <button type="button" id="start-sessie" class="btn-focus btn-start">▶ Start Focus</button>
+                <button type="button" id="pauze-sessie" class="btn-focus btn-pauze" disabled>⏸ Pause</button>
+                <button type="button" id="reset-sessie" class="btn-focus btn-reset">↺ Reset</button>
+            </div>
+
+            <div class="audio-opties">
+                <label for="geluid-keuze">🎧 Background Sound:</label>
+                <select id="geluid-keuze">
+                    <option value="none">Silent</option>
+                    <option value="regen">🌧️ Light Rain</option>
+                    <option value="ruis">🌊 Brown Noise</option>
+                </select>
+            </div>
+        </main>
+
+        <footer class="focus-footer">
+            <p>Current focus streak: <span id="streak-teller">0</span> sessions completed 🔥</p>
+            <a href="status.html" class="stats-link">View your Stats →</a>
+        </footer>
+    </section>
+
+    <!-- Notificatie Systeem (Telefoon stijl) -->
+    <div id="notif-versnelling" class="notificatie-banner hidden">
+        <div class="notif-icon">⚠️</div>
+        <div class="notif-content">
+            <strong>System</strong>
+            <p>Warning: the timer counts down faster every 20 seconds!</p>
+        </div>
+    </div>
+
+    <div id="notif-fake-video" class="notificatie-banner hidden">
+        <div class="notif-icon">📱</div>
+        <div class="notif-content">
+            <strong>TikTok</strong>
+            <p>Someone sent you a video! 😂 Watch it now.</p>
+        </div>
+        <button class="notif-klik-laag fake-notif-btn"></button>
+    </div>
+
+    <div id="notif-whatsapp" class="notificatie-banner hidden">
+        <div class="notif-icon">💬</div>
+        <div class="notif-content">
+            <strong>WhatsApp</strong>
+            <p>Mom: Dinner is ready! It's getting cold!</p>
+        </div>
+        <button class="notif-klik-laag fake-notif-btn"></button>
+    </div>
+
+    <div id="notif-snapchat" class="notificatie-banner hidden">
+        <div class="notif-icon">👻</div>
+        <div class="notif-content">
+            <strong>Snapchat</strong>
+            <p>Emma is typing...</p>
+        </div>
+        <button class="notif-klik-laag fake-notif-btn"></button>
+    </div>
+
+    <div id="notif-instagram" class="notificatie-banner hidden">
+        <div class="notif-icon">📸</div>
+        <div class="notif-content">
+            <strong>Instagram</strong>
+            <p>Max shared a reel. "Bro look at this 💀"</p>
+        </div>
+        <button class="notif-klik-laag fake-notif-btn"></button>
+    </div>
+
+    <!-- Focus Verbroken Bericht -->
+    <div id="focus-broken-bericht" class="broken-overlay hidden">
+        <div class="broken-card">
+            <div class="broken-emoji">💀</div>
+            <h2>FOCUS BROKEN</h2>
+            <p>Your focus session was broken because you got distracted!</p>
+            <button id="sluit-broken-btn" class="btn-focus btn-reset">Close & Reset</button>
+        </div>
+    </div>
+
+    <!-- Voltooiing overlay -->
+    <div id="sessie-voltooid" class="voltooid-overlay hidden">
+        <div class="voltooid-card">
+            <div class="voltooid-emoji">🏆</div>
+            <h2>YOU WON!</h2>
+            <p>You survived the ultimate focus test!</p>
+            <div class="voltooid-knoppen">
+                <button id="opnieuw-btn" class="btn-focus btn-start">Another session</button>
+                <a href="status.html" class="btn-focus btn-stats">View Stats</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/focus.js"></script>
+</body>
+
+</html>
