@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (startBtn) {
     startBtn.addEventListener("click", () => {
-      window.location.href = "/feed.html";
+      window.location.href = "feed.html";
     });
   }
 
